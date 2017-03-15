@@ -29,20 +29,122 @@ odoo.login(odoo_key['database'], odoo_key['username'], odoo_key['password'])
 prods_odoo_obj = odoo.env['product.product']
 mila_np = MilaWorksheet('2017-03-07 NOTA DE PEDIDO.xlsx')
 
-print 'Esta en odoo no esta en mila (productos discontinuados)'
-# chequear lo que está en odoo y no está en mila
-ids = prods_odoo_obj.search([('categ_id', 'in', [3, 25, 26, 53])])
-for odoo_prod in prods_odoo_obj.browse(ids):
-    # busco en mila
-    mila_prod = mila_np.prod(odoo_prod.default_code)
-    if not mila_prod:
-        print u'> {:10} {}'.format(odoo_prod.default_code, odoo_prod.name)
+MILA_CATEGS = [3, 25, 45, 26, 49, 53]
 
-print
-print 'esta en mila no esta en odoo (productos nuevos)'
-# chequear lo que está en mila y no está en odoo
-for mila_prod in mila_np.list():
-    # busco en odoo
-    ids = prods_odoo_obj.search([('default_code', '=', mila_prod.code)])
-    if not ids:
-        print '>', mila_prod.list()
+
+def process_obsolete_mila_prods():
+    """ marca en odoo los producos obsoletos """
+    # get all mila prods
+    ids = prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS)])
+    for odoo_prod in prods_odoo_obj.browse(ids):
+        # check mila worksheets
+        mila_prod = mila_np.prod(odoo_prod.default_code)
+        if not mila_prod:
+            # El producto está obsoloeto ponerlo obsoleto en Odoo
+            odoo_prod.state = 'obsolete'
+            print 'obsoleto', odoo_prod.name
+
+
+def process_all_worksheet_prods():
+    print 'actualizando productos en odoo'
+    """ actualiza o agrega los productos en odoo """
+    for mila_prod in mila_np.list():
+        # busco en odoo
+        assert mila_prod.ctrl in ['MM', 'MP']
+        ids = prods_odoo_obj.search([('default_code', '=', mila_prod.code)])
+        if ids:
+            # está en odoo
+            odoo_prod = prods_odoo_obj.browse(ids)
+            # asegurar que solo hay uno
+            if len(ids) > 1:
+                print '{} está {} veces'.format(mila_prod.code, len(ids))
+            assert len(ids) == 1
+            for prod in odoo_prod:
+                prod.lst_price = mila_prod.price
+                prod.name = mila_prod.desc
+                prod.cost_method = 'real'
+                prod.standard_price = mila_prod.price * 0.41095
+                prod.sale_ok = not mila_prod.pack
+                prod.categ_id = 25 if mila_prod.ctrl == 'MM' else 26
+                print 'update ', mila_prod.code, mila_prod.desc, prod.categ_id
+        else:
+            # no está en odoo, lo agregamos
+            id_prod = prods_odoo_obj.create({
+                'default_code': mila_prod.code,
+                'lst_price': mila_prod.price,
+                'name': mila_prod.desc,
+                'cost_method': 'real',
+                'categ_id': 25 if mila_prod.ctrl == 'MM' else 26,
+                'standard_price': mila_prod.price * 0.41095,
+                'sale_ok': not mila_prod.pack
+            })
+            print 'add id, code, desc', id_prod, mila_prod.code, mila_prod.desc
+
+    """ Marca los productos de odoo que están obsoletos """
+
+    print 'buscando obsoletos'
+    ids = prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS)])
+    # recorro todos los productos odoo
+    for odoo_prod in prods_odoo_obj.browse(ids):
+        print '>', odoo_prod.default_code,
+        # busco en mila
+
+        mila_prod = mila_np.prod(odoo_prod.default_code)
+        if not mila_prod:
+            # no está en mila, lo pongo como obsoleto
+            odoo_prod.state = 'obsolete'
+            print '--------------- obsoleto'
+        else:
+            print '- normal'
+
+
+def check_new_worksheet():
+    print 'Esta en odoo no esta en mila (productos discontinuados)'
+    # chequear lo que está en odoo y no está en mila
+    ids = prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS)])
+    for odoo_prod in prods_odoo_obj.browse(ids):
+        # busco en mila
+        mila_prod = mila_np.prod(odoo_prod.default_code)
+        if not mila_prod:
+            print u'> {:10} {}'.format(odoo_prod.default_code, odoo_prod.name)
+
+    print
+    print 'esta en mila no esta en odoo (productos nuevos)'
+    # chequear lo que está en mila y no está en odoo
+    for mila_prod in mila_np.list():
+        # busco en odoo
+        ids = prods_odoo_obj.search([('default_code', '=', mila_prod.code)])
+        if not ids:
+            print '>', mila_prod.list()
+
+
+def update_odoo_products():
+    # bajar los productos discontinuados
+    ids = prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS)])
+    for odoo_prod in prods_odoo_obj.browse(ids):
+        # busco en mila
+        mila_prod = mila_np.prod(odoo_prod.default_code)
+        if not mila_prod:
+            print u'> {:10} {}'.format(odoo_prod.default_code, odoo_prod.name)
+
+
+def list_categ():
+    categ_obj = odoo.env['product.category']
+    ids = MILA_CATEGS
+    categs = categ_obj.browse(ids)
+    for cat in categs:
+        print cat.id, cat.name
+
+
+def list_products():
+    ids = prods_odoo_obj.search([('id', '=', '4150')])
+    prods = prods_odoo_obj.browse(ids)
+    for prod in prods:
+        print prod.id, prod.default_code, prod.name, prod.active
+
+
+# process_obsolete_mila_prods()
+process_all_worksheet_prods()
+#list_categ()
+# check_new_worksheet()
+# list_products()

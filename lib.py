@@ -41,6 +41,10 @@ class Product(object):
         return code
 
     @property
+    def pack(self):
+        return self._pack
+
+    @property
     def ctrl(self):
         return self._ctrl
 
@@ -89,8 +93,6 @@ class MilaWorksheet(object):
             if rowlist[0] in ['MM', 'MP']:
                 self._prods.append(Product(rowlist))
 
-
-#        wb = openpyxl.load_workbook(filename='productos-fabricados.xlsx', read_only=True)
         sheet = wb.get_sheet_by_name('articulos-individuales')
 
         # itero sobre la otra hoja de la planilla por filas
@@ -105,11 +107,11 @@ class MilaWorksheet(object):
             if rowlist[0] in ['MM', 'MP']:
                 self._prods.append(Product(rowlist))
 
-
     def list(self):
         return self._prods
 
     def prod(self, default_code):
+        """ Search a product in mila worksheets """
         p = False
         for p in self._prods:
             if p.code == default_code:
