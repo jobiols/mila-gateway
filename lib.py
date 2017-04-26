@@ -18,8 +18,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 # -----------------------------------------------------------------------------------
-hola = 19
-
 
 # -*- coding: utf-8 -*-
 import openpyxl
@@ -82,7 +80,7 @@ class MilaWorksheet(object):
         sheet = wb.get_sheet_by_name('PEDIDO COT MM-MP')
 
         # itero sobre toda la planilla por filas
-        for row in sheet.iter_rows(min_row=23, min_col=4, max_col=10, max_row=193):
+        for row in sheet.iter_rows(min_row=23, min_col=4, max_col=10, max_row=600):
             rowlist = []
             # itero en toda la fila por celdas
             for cell in row:
@@ -96,7 +94,7 @@ class MilaWorksheet(object):
         sheet = wb.get_sheet_by_name('articulos-individuales')
 
         # itero sobre la otra hoja de la planilla por filas
-        for row in sheet.iter_rows(min_row=1, min_col=4, max_col=11, max_row=10):
+        for row in sheet.iter_rows(min_row=1, min_col=4, max_col=11, max_row=35):
             rowlist = []
             # itero en toda la fila por celdas
             for cell in row:

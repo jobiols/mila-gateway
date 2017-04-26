@@ -78,10 +78,10 @@ def process_all_worksheet_prods():
                 'standard_price': mila_prod.price * 0.41095,
                 'sale_ok': not mila_prod.pack
             })
-            print 'add id, code, desc', id_prod, mila_prod.code, mila_prod.desc
+            print 'add id, code, desc ----------------------', id_prod, mila_prod.code, mila_prod.desc
 
     """ Marca los productos de odoo que están obsoletos """
-
+    """
     print 'buscando obsoletos'
     ids = prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS)])
     # recorro todos los productos odoo
@@ -96,7 +96,7 @@ def process_all_worksheet_prods():
             print '--------------- obsoleto'
         else:
             print '- normal'
-
+    """
 
 def check_new_worksheet():
     print 'Esta en odoo no esta en mila (productos discontinuados)'
