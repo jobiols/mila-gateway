@@ -59,7 +59,7 @@ class Product(object):
         return self._price
 
     def list(self):
-        return u'{:10}  ${:6.2f}  {} {:10}  '.format(self.code, self.price, self._pack, self.desc)
+        return u'{:10}  ${:6.2f}  {} {:10}  '.format(self.code, self.price, 'PACK' if self._pack else '', self.desc)
 
 
 class MilaWorksheet(object):
@@ -80,18 +80,22 @@ class MilaWorksheet(object):
         sheet = wb.get_sheet_by_name('PEDIDO COT MM-MP')
 
         # itero sobre toda la planilla por filas
-        for row in sheet.iter_rows(min_row=23, min_col=4, max_col=10, max_row=600):
+        for row in sheet.iter_rows(min_row=23, min_col=4, max_col=10, max_row=701):
             rowlist = []
             # itero en toda la fila por celdas
             for cell in row:
                 # considero solo algunas celdas
                 if cell.column in [CTRL, DESC, CODE, PRICE]:
+                    if cell.value == '9999-99':
+                        print 'Lectura de planilla mila ok'
+                        return
                     rowlist.append(decode(cell))
             # me quedo solo con las rows marcadas MM o MP
             if rowlist[0] in ['MM', 'MP','M20A','P20A']:
                 self._prods.append(Product(rowlist))
 
-        sheet = wb.get_sheet_by_name('articulos-individuales')
+        """
+        sheet = wb.get_sheet_by_name('PEDIDO COT MM-MP')
 
         # itero sobre la otra hoja de la planilla por filas
         for row in sheet.iter_rows(min_row=1, min_col=4, max_col=11, max_row=35):
@@ -104,7 +108,7 @@ class MilaWorksheet(object):
             # me quedo solo con las rows marcadas MM o MP
             if rowlist[0] in ['MM', 'MP']:
                 self._prods.append(Product(rowlist))
-
+        """
     def list(self):
         return self._prods
 

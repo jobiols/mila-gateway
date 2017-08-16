@@ -27,7 +27,7 @@ odoo = odoorpc.ODOO(odoo_key['server'], port=odoo_key['port'])
 odoo.login(odoo_key['database'], odoo_key['username'], odoo_key['password'])
 
 prods_odoo_obj = odoo.env['product.product']
-mila_np = MilaWorksheet('2017-03-07 NOTA DE PEDIDO.xlsx')
+mila_np = MilaWorksheet('2017-07-28 NOTA DE PEDIDO AGOSTO 2017.xlsx')
 
 MILA_CATEGS = [3, 25, 45, 26, 49, 53]
 
@@ -46,8 +46,9 @@ def process_obsolete_mila_prods():
 
 
 def process_all_worksheet_prods():
-    print 'actualizando productos en odoo'
     """ actualiza o agrega los productos en odoo """
+
+    print 'actualizando productos en odoo'
     for mila_prod in mila_np.list():
         # busco en odoo
         assert mila_prod.ctrl in ['MM', 'MP']
@@ -80,28 +81,12 @@ def process_all_worksheet_prods():
             })
             print 'add id, code, desc ----------------------', id_prod, mila_prod.code, mila_prod.desc
 
-    """ Marca los productos de odoo que están obsoletos """
-    """
-    print 'buscando obsoletos'
-    ids = prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS)])
-    # recorro todos los productos odoo
-    for odoo_prod in prods_odoo_obj.browse(ids):
-        print '>', odoo_prod.default_code,
-        # busco en mila
-
-        mila_prod = mila_np.prod(odoo_prod.default_code)
-        if not mila_prod:
-            # no está en mila, lo pongo como obsoleto
-            odoo_prod.state = 'obsolete'
-            print '--------------- obsoleto'
-        else:
-            print '- normal'
-    """
 
 def check_new_worksheet():
     print 'Esta en odoo no esta en mila (productos discontinuados)'
     # chequear lo que está en odoo y no está en mila
-    ids = prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS)])
+    ids = prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS),
+                                 ('state','=','sellable')])
     for odoo_prod in prods_odoo_obj.browse(ids):
         # busco en mila
         mila_prod = mila_np.prod(odoo_prod.default_code)
@@ -146,5 +131,5 @@ def list_products():
 # process_obsolete_mila_prods()
 process_all_worksheet_prods()
 #list_categ()
-# check_new_worksheet()
+#check_new_worksheet()
 # list_products()
