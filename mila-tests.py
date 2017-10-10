@@ -27,7 +27,7 @@ odoo = odoorpc.ODOO(odoo_key['server'], port=odoo_key['port'])
 odoo.login(odoo_key['database'], odoo_key['username'], odoo_key['password'])
 
 prods_odoo_obj = odoo.env['product.product']
-mila_np = MilaWorksheet('2017-07-28 NOTA DE PEDIDO AGOSTO 2017.xlsx')
+mila_np = MilaWorksheet('2017-10-mila-precios.xlsx')
 
 MILA_CATEGS = [3, 25, 45, 26, 49, 53]
 
@@ -83,7 +83,12 @@ def process_all_worksheet_prods():
 
 
 def check_new_worksheet():
+    '''
+        Chequea una nueva nota de pedido mila contra odoo verifica los productos discontinuados y los
+        productos nuevos. Sirve para chequear los errores de la planilla.
+    '''
     print 'Esta en odoo no esta en mila (productos discontinuados)'
+    print 'codigo    descripcion --------------------------------------'
     # chequear lo que está en odoo y no está en mila
     ids = prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS),
                                  ('state','=','sellable')])
@@ -95,6 +100,7 @@ def check_new_worksheet():
 
     print
     print 'esta en mila no esta en odoo (productos nuevos)'
+    print 'codigo     precio         descripcion'
     # chequear lo que está en mila y no está en odoo
     for mila_prod in mila_np.list():
         # busco en odoo
@@ -128,8 +134,9 @@ def list_products():
         print prod.id, prod.default_code, prod.name, prod.active
 
 
-# process_obsolete_mila_prods()
-process_all_worksheet_prods()
-#list_categ()
 #check_new_worksheet()
-# list_products()
+
+#process_obsolete_mila_prods()
+#process_all_worksheet_prods()
+#list_categ()
+#list_products()

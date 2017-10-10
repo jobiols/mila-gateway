@@ -80,7 +80,7 @@ class MilaWorksheet(object):
         sheet = wb.get_sheet_by_name('PEDIDO COT MM-MP')
 
         # itero sobre toda la planilla por filas
-        for row in sheet.iter_rows(min_row=23, min_col=4, max_col=10, max_row=701):
+        for row in sheet.iter_rows(min_row=23, min_col=4, max_col=10, max_row=627):
             rowlist = []
             # itero en toda la fila por celdas
             for cell in row:
@@ -91,7 +91,7 @@ class MilaWorksheet(object):
                         return
                     rowlist.append(decode(cell))
             # me quedo solo con las rows marcadas MM o MP
-            if rowlist[0] in ['MM', 'MP','M20A','P20A']:
+            if rowlist[0] in ['MM', 'MP', 'M20A', 'P20A']:
                 self._prods.append(Product(rowlist))
 
         """
