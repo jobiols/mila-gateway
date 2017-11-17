@@ -32,6 +32,7 @@ mila_np = MilaWorksheet('2017-10-mila-precios.xlsx')
 MILA_CATEGS = [3, 25, 45, 26, 49, 53]
 
 
+
 def process_obsolete_mila_prods():
     """ marca en odoo los producos obsoletos """
     # get all mila prods

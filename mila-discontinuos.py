@@ -132,5 +132,5 @@ def list_products():
 # process_obsolete_mila_prods()
 process_all_worksheet_prods()
 # list_categ()
-#check_new_worksheet()
+# check_new_worksheet()
 # list_products()
