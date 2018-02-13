@@ -35,13 +35,16 @@ class Product(object):
 
     def formatted(self):
         return "'" + self.get_code() + "'"
-        return u'{:10}  {}  {}'.format(self.get_code(), self.get_list_price(), self.get_name())
+        return u'{:10}  {}  {}'.format(self.get_code(), self.get_list_price(),
+                                       self.get_name())
 
     def get_code(self):
-        return self._object.default_code if self._object else self._data['default_code']
+        return self._object.default_code if self._object else self._data[
+            'default_code']
 
     def get_list_price(self):
-        return self._object.lst_price if self._object else self._data['lst_price']
+        return self._object.lst_price if self._object else self._data[
+            'lst_price']
 
     def get_standard_price(self):
         return self._data['lst_price'] * 0.41095
@@ -88,8 +91,11 @@ class ProductData(object):
 class OdooDb(ProductData):
     def __init__(self, odoo_key):
         self._odoo_key = odoo_key
-        self._odoo = odoorpc.ODOO(self._odoo_key['server'], port=self._odoo_key['port'])
-        self._odoo.login(self._odoo_key['database'], self._odoo_key['username'], self._odoo_key['password'])
+        self._odoo = odoorpc.ODOO(self._odoo_key['server'],
+                                  port=self._odoo_key['port'])
+        self._odoo.login(self._odoo_key['database'],
+                         self._odoo_key['username'],
+                         self._odoo_key['password'])
         self._prods_odoo_obj = self._odoo.env['product.product']
 
     def all_odoo(self):
@@ -97,8 +103,8 @@ class OdooDb(ProductData):
 
         print 'getting ids'
         # get all mila prods categoria mila y estado no obsoleto
-        ids = self._prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS)])
-        #                                     ('state', '=', 'sellable')])
+        ids = self._prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS),
+                                           ('state', '=', 'sellable')])
         print 'browsing prods'
         for odoo_prod in self._prods_odoo_obj.browse(ids):
             self._pro.append(Product(object=odoo_prod))
@@ -136,14 +142,17 @@ class CsvFile(ProductData):
 
 class Odoo:
     def __init__(self, odoo_key):
-        # cargar los productos de la planilla mila
+        """
+            Carga los productos que estan en odoo y los que estan en la plantilla
+            mila para luego hacer las comparaciones.
+        """
         prod = OdooDb(odoo_key)
         prod.all_odoo()
         self._odoo_prods = prod
         print 'odoo prods', len(prod._pro)
 
         prod = CsvFile()
-        prod.all_csv('mila-precios-20171009.csv')
+        prod.all_csv('mila-precios.csv')
         self._mila_prods = prod
         print 'mila prods', len(prod._pro)
 
@@ -234,8 +243,11 @@ class Odoo:
 
 odoo = Odoo(odoo_key)
 # odoo.list_new_products()
-# odoo.list_obsolete_products()
+odoo.list_obsolete_products()
 # odoo.list_odoo_products()
 # odoo.list_mila_products()
-odoo.process_all()
 # odoo.list_obsolete_prods()
+
+
+
+# odoo.process_all()
