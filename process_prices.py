@@ -134,6 +134,7 @@ class CsvFile(ProductData):
 
             self._pro.append(Product(data={
                 'categ_id': line[header.index('categ_id')],
+                'ext_code': line[header.index('ext_code')],
                 'default_code': line[header.index('default_code')],
                 'name': line[header.index('name')],
                 'lst_price': float(line[header.index('lst_price')]),
