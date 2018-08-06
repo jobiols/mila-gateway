@@ -1,28 +1,11 @@
 # -*- coding: utf-8 -*-
-# -----------------------------------------------------------------------------------
-#
-#    Copyright (C) 2017  jeo Software  (http://www.jeosoft.com.ar)
-#    All Rights Reserved.
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
 # ----------------------------------------------------------------------------------
 import odoorpc
 from secret import odoo_key
 import csv
 
 MILA_CATEGS = [3, 25, 45, 26, 49, 53]
+MILA_PRECIOS= 'mila-precios.csv'
 
 
 class Product(object):
@@ -153,7 +136,7 @@ class Odoo:
         print 'odoo prods', len(prod._pro)
 
         prod = CsvFile()
-        prod.all_csv('mila-precios.csv')
+        prod.all_csv(MILA_PRECIOS)
         self._mila_prods = prod
         print 'mila prods', len(prod._pro)
 
@@ -243,10 +226,8 @@ class Odoo:
 
 
 odoo = Odoo(odoo_key)
-# odoo.list_new_products()
+#odoo.list_new_products()
 #odoo.list_obsolete_products()
 # odoo.list_odoo_products()
 # odoo.list_mila_products()
-# odoo.list_obsolete_prods()
-
-#odoo.process_all()
+odoo.process_all()
