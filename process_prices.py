@@ -86,8 +86,7 @@ class OdooDb(ProductData):
 
         print 'getting ids'
         # get all mila prods categoria mila y estado no obsoleto
-        ids = self._prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS),
-                                           ('state', '=', 'sellable')])
+        ids = self._prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS)])
         print 'browsing prods'
         for odoo_prod in self._prods_odoo_obj.browse(ids):
             self._pro.append(Product(object=odoo_prod))
@@ -117,7 +116,6 @@ class CsvFile(ProductData):
 
             self._pro.append(Product(data={
                 'categ_id': line[header.index('categ_id')],
-                'ext_code': line[header.index('ext_code')],
                 'default_code': line[header.index('default_code')],
                 'name': line[header.index('name')],
                 'lst_price': float(line[header.index('lst_price')]),
@@ -204,15 +202,17 @@ class Odoo:
             pro = self._odoo_prods.find(prod)
             if pro:
                 # esta en odoo, lo actualizo
+                print '---update ', pro.formatted()
                 pro.obj().name = prod.get_name()
                 pro.obj().lst_price = prod.get_list_price()
                 pro.obj().cost_method = 'real'
                 pro.obj().standard_price = prod.get_standard_price()
                 pro.obj().sale_ok = not prod.get_prod_pack()
                 pro.obj().categ_id = prod.get_categ()
-                print '---update ', pro.formatted()
+                pro.obj().state = 'sellable'
             else:
                 # no está en odoo, lo agregamos
+                print '---add ', prod.formatted()
                 id_prod = self._odoo_prods._prods_odoo_obj.create({
                     'default_code': prod.get_code(),
                     'lst_price': prod.get_list_price(),
@@ -220,14 +220,14 @@ class Odoo:
                     'cost_method': 'real',
                     'categ_id': prod.get_categ(),
                     'standard_price': prod.get_standard_price(),
-                    'sale_ok': not prod.get_prod_pack()
+                    'sale_ok': not prod.get_prod_pack(),
+                    'state': 'sellable'
                 })
-                print '---add ', prod.formatted()
 
 
 odoo = Odoo(odoo_key)
 #odoo.list_new_products()
 #odoo.list_obsolete_products()
-# odoo.list_odoo_products()
-# odoo.list_mila_products()
+#odoo.list_odoo_products()
+#odoo.list_mila_products()
 odoo.process_all()
