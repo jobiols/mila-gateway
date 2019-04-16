@@ -5,7 +5,7 @@ from secret import odoo_key
 import csv
 
 MILA_CATEGS = [3, 25, 45, 26, 49, 53]
-MILA_PRECIOS= 'mila-precios.csv'
+MILA_PRECIOS = '2019-04-mila-precios-master.csv'
 
 
 class Product(object):
@@ -86,7 +86,10 @@ class OdooDb(ProductData):
 
         print 'getting ids'
         # get all mila prods categoria mila y estado no obsoleto
+        # hay que traer explicitamente los productos no activos.
         ids = self._prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS)])
+        ids += self._prods_odoo_obj.search([('categ_id', 'in', MILA_CATEGS),
+                                            ('active', '=', False)])
         print 'browsing prods'
         for odoo_prod in self._prods_odoo_obj.browse(ids):
             self._pro.append(Product(object=odoo_prod))
@@ -227,7 +230,7 @@ class Odoo:
 
 odoo = Odoo(odoo_key)
 #odoo.list_new_products()
-#odoo.list_obsolete_products()
-#odoo.list_odoo_products()
-#odoo.list_mila_products()
+# odoo.list_obsolete_products()
+# odoo.list_odoo_products()
+# odoo.list_mila_products()
 odoo.process_all()
