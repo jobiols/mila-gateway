@@ -229,8 +229,9 @@ class Odoo:
 
 
 odoo = Odoo(odoo_key)
-odoo.list_new_products()
-# odoo.list_obsolete_products()
-# odoo.list_odoo_products()
-# odoo.list_mila_products()
-# odoo.process_all()
+#odoo.list_new_products()
+#odoo.list_obsolete_products()
+#odoo.list_odoo_products()
+#odoo.list_mila_products()
+print 'termine---'
+odoo.process_all()

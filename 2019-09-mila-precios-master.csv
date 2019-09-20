@@ -1,6 +1,6 @@
 categ_id,name,default_code,lst_price
 MM,PROMOCIONAL SET MAQUILLAJE COMPACTO DUO CORRECTIVO Art. 2019Z- Cartuchera sin divisiones Art. 2010R-01  Maquillaje Compacto Polvo Mate -Efecto BLUR  -Amarillo Art. 1301R-02  Polvo Compacto Microfinish  ULTRA HD -Anaranjado,5010,995
-MM,PROMOCIONAL Set Labios LIP ART PRO Art. 1501P- Labial Humectante - Paleta de labiales -32 unid. Art. 1550P-00- Pigmentador Humectante -para labios Art. 1504P- Set Desmaquillante y Humectante para labios,5501,2.000
+MM,PROMOCIONAL Set Labios LIP ART PRO Art. 1501P- Labial Humectante - Paleta de labiales -32 unid. Art. 1550P-00- Pigmentador Humectante -para labios Art. 1504P- Set Desmaquillante y Humectante para labios,5501,2000
 MM,Pre Base Matificante Ultra HD Botella con Dosificador x 19g. @Claro,1015-01,700
 MM,Pre Base Matificante Ultra HD Botella con Dosificador x 19g. @Oscuro,1015-02,700
 MM,Sombra Compacta (Mini) Repuesto de 20 mm x 1 g. hsta agotar stock. @Nacarado Tornasol Dorado,1112-02,150
@@ -48,8 +48,8 @@ MM,Bases Alta Cobertura ULTRA HD Pote INDIVIDUAL x 15g. c/u @Beige medio anaranj
 MM,"Tonalizador Correctivo Mini paleta 6 unid.( x 2,5 g. c/u) @Art. 2001P/01-05-03-04-07-08",1005P-01,620
 MM,"Tonalizador Correctivo Mini paleta 6 unid.( x 2,5 g. c/u) @Art. 2001P/06-11-12-02-13-09",1005P-02,620
 MM,"Tonalizador Correctivo Mini paleta 6 unid.( x 2,5 g. c/u) @Art. 1701R-01/02/05/06/07/2001P-12",1005P-03,620
-MM,"Labial Humectante Paleta de labiales 32 unid.( x 2,5g.c/u.)",1501P,1.400
-MM,Rubor Cremoso - 15 tonos LABIOS-POMULOS,1221P,1.150
+MM,"Labial Humectante Paleta de labiales 32 unid.( x 2,5g.c/u.)",1501P,1400
+MM,Rubor Cremoso - 15 tonos LABIOS-POMULOS,1221P,1150
 MM,Diluyente para Sombras -Apto HD (Botella con dosificador) x 10cc.,2015P,270
 MM,Tonalizador Correctivo Corrector Cremoso Duo- Petaca Dúo x 4g. @Beige Amarillento / Beige grisado,1000-01,345
 MM,Tonalizador Correctivo Corrector Cremoso Duo- Petaca Dúo x 4g. @Salmón / Tostado,1000-02,345
@@ -57,7 +57,7 @@ MM,Tonalizador Correctivo Repuesto de 26mm x 1g. NUEVO FORMATO!! @Blanco,1001-01
 MM,Tonalizador Correctivo Repuesto de 26mm x 1g. NUEVO FORMATO!! @Verde,1001-02,175
 MM,Tonalizador Correctivo Repuesto de 26mm x 1g. NUEVO FORMATO!! @Marrón Africano,1001-09,175
 MM,Tonalizador Correctivo Repuesto de 26mm x 1g. NUEVO FORMATO!! @Beige Verdoso,1001-13,175
-MM,Fluidificador de texturas Pre Base de Maquillaje Botella con Dosificador x 20g. @Pre base.,1014,1.050
+MM,Fluidificador de texturas Pre Base de Maquillaje Botella con Dosificador x 20g. @Pre base.,1014,1050
 MM,Sombra Compacta Highlight Soft Petaca x 4g. @Sombra Compacta  Highlight Soft Arena,1100-01,365
 MM,Sombra Compacta Hiperpigmentadas Repuesto de 37 mm. x 4g. @Marfil Satinado,1110-116,315
 MM,Sombra Compacta Hiperpigmentadas Repuesto de 37 mm. x 4g. @Rosa Mate,1110-118,315
@@ -182,23 +182,23 @@ MM,Maquillaje Líquido Efecto Polvo - HD Botella con dosificador x 20g. @Dorado,
 MM,Maquillaje Líquido Efecto Polvo - HD Botella con dosificador x 20g. @Tostado,1860-03,965
 MM,Súper CC Maquillaje Mate Botella con dosificador x 20g. @Claro,1864-01,705
 MM,Súper CC Maquillaje Mate Botella con dosificador x 20g. @Oscuro,1864-02,705
-MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Salmon",2000P/2001P-03,1.180
-MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Anaranjado",2000P/2001P-04,1.180
-MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Amarillo",2000P/2001P-06,1.180
-MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Marron Africano",2000P/2001P-09,1.180
-MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Beige Amarillento",2000P/2001P- 11,1.180
-MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Beige Grisado",2000P/2001P- 12,1.180
-MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Beige Verdoso",2000P/2001P- 13,1.180
+MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Salmon",2000P/2001P-03,1180
+MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Anaranjado",2000P/2001P-04,1180
+MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Amarillo",2000P/2001P-06,1180
+MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Marron Africano",2000P/2001P-09,1180
+MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Beige Amarillento",2000P/2001P-11,1180
+MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Beige Grisado",2000P/2001P-12,1180
+MM,"2000P/2001P - Tonalizador Correctivo (Pack 4 Unidades) Pote x 2,5g  (Art. Individual 2000P) @Beige Verdoso",2000P/2001P-13,1180
 MM,Tonalizador Correctivo Repuesto de 33mm x 4g. @Salmón,2001P-03,257
 MM,Tonalizador Correctivo Repuesto de 33mm x 4g. @Anaranjado,2001P-04,257
 MM,Tonalizador Correctivo Repuesto de 33mm x 4g. @Amarillo,2001P-06,257
 MM,Tonalizador Correctivo Repuesto de 33mm x 4g. @Beige Amarillento,2001P-11,257
 MM,Tonalizador Correctivo Repuesto de 33mm x 4g. @Beige Grisado,2001P-12,257
-MM,Maquillaje Compacto Polvo APTO HD Cartuchera  Dúo x 10g. c/u. @claro / oscuro.,2005P-01,1.130
-MM,Maquillaje Compacto Polvo APTO HD Cartuchera  Dúo x 10g. c/u. @Satinado 01/satinado 02 Dúo claro / oscuro.,2005P-02,1.130
+MM,Maquillaje Compacto Polvo APTO HD Cartuchera  Dúo x 10g. c/u. @claro / oscuro.,2005P-01,1130
+MM,Maquillaje Compacto Polvo APTO HD Cartuchera  Dúo x 10g. c/u. @Satinado 01/satinado 02 Dúo claro / oscuro.,2005P-02,1130
 MM,Set para Labios y Rostro Petaca cristal con 8 bocas. @Maquillaje Cremoso Correctivo. Colores: 01 (2001P-03) / 02 (1701R-02) / 03 (2001P-11) / 04 (2001P-12) Labial humectante . Colores: 01 (1500-528) / 02 (1500-504) / 03 (1500-512) / 04 (1500-508) ,2029-01,450
 MM,Set para Labios y Rostro Petaca cristal con 8 bocas. @Maquillaje Cremoso Correctivo. Colores: 01 (2001P-04) / 02 (1701R-06) / 03 (2001P-06) / 04 (1701R-04) Labial humectante . Colores: 01 (1500-507) / 02 (1500-506) / 03 (1500-522) / 04 (1500-534)  NUEVO!,2029-02,450
-MM,Set para Labios ULTRA HD Labial Mate Estuche Acrilico - 8unidades x 7g. c/u @8 Tonos Atemporales mate -apto para Decoracion de Labios,2050P,1.920
+MM,Set para Labios ULTRA HD Labial Mate Estuche Acrilico - 8unidades x 7g. c/u @8 Tonos Atemporales mate -apto para Decoracion de Labios,2050P-01,1920
 MM,Sombra en Polvo Diamante - Cristales de Luz Pote x 1g. @Arena Nacar,2152P-00,600
 MM,Sombra en Polvo Diamante - Cristales de Luz Pote x 1g. @Rosa cuarzo,2152P-01,600
 MM,Sombra en Polvo Diamante - Cristales de Luz Pote x 1g. @Durazno tornasol,2152P-02,600
@@ -207,9 +207,9 @@ MM,Sombra en Polvo Perla Cristal Diamante Polvera x 1 g. @Oro,2153P-01,600
 MM,Sombra en Polvo Perla Cristal Diamante Polvera x 1 g. @Plata,2153P-02,600
 MM,Sombra en Polvo Perla Cristal Diamante Polvera x 1 g. @Tornasol,2153P-03,600
 MM,Sombra en Polvo Perla Cristal Diamante Polvera x 1 g. @Anaranjado Tornasolado Rosa,2153P-04,600
-MM,Polvo Volátil  Pro Universal HD (Pack 2 Unidades + 2 Polveritas vacias x 8g.) c/u (Art. Individual 2300P)  @Blanco Universal,2320P-01,1.550
-MM,Brillo Labial (PACK 3 UNIDADES) Botella con dosificador x 10g. (Art. Individual 2540P)  @Laca Cristal,2541P-00,1.200
-MM,Set de Bases Alta Cobertura ULTRA HD Estuche Acrilico - 7 unidades x 7g. c/u,2700P-01,2.190
+MM,Polvo Volátil  Pro Universal HD (Pack 2 Unidades + 2 Polveritas vacias x 8g.) c/u (Art. Individual 2300P)  @Blanco Universal,2320P-01,1550
+MM,Brillo Labial (PACK 3 UNIDADES) Botella con dosificador x 10g. (Art. Individual 2540P)  @Laca Cristal,2541P-00,1200
+MM,Set de Bases Alta Cobertura ULTRA HD Estuche Acrilico - 7 unidades x 7g. c/u,2700P-01,2190
 MM,Base de Maquillaje Siliconado Blur Efecto Photoshop Botella con dosificadorx 30g. @Claro,2802P-01,965
 MM,Base de Maquillaje Siliconado Blur Efecto Photoshop Botella con dosificadorx 30g. @Medio,2802P-02,965
 MM,Base de Maquillaje Siliconado Blur Efecto Photoshop Botella con dosificadorx 30g. @Oscuro,2802P-03,965
@@ -219,12 +219,12 @@ MM,Maquillaje Líquido Pigmento Puro Botella con gotero x 20g. @Marrón Africano
 MM,Sombra Cremosa Duo Pomada para Cejas Petaca Dúo x 4g. @EXTRA CLARAS,2912P-00,530
 MM,Sombra Cremosa Duo Pomada para Cejas Petaca Dúo x 4g. @OSCURAS,2912P-01,530
 MM,Sombra Cremosa Duo Pomada para Cejas Petaca Dúo x 4g. @CLARAS,2912P-02,530
-MM,1003P - Tonalizador Correctivo Paleta 15 unid.( x 4 g. c/u) ,1003P,2.300
-MM,"Sombra Compacta - Paleta de tonos ""Fantasía"" -14 unid. (x 4g.c/u.) -FULL COLOR    ",1105P,3.250
-MM,"Sombra Compacta - Paleta de tonos ""Nude"" -14 unid. (x 4g.c/u.) NUEVA COMBINACION ",1106P,3.250
-MM,"Sombra Compacta - Paleta de tonos ""Nude Atemporal""-15 unid. (x 4g.c/u.) HD",1107P,3.250
-MM,"Sombra Compacta - Paleta de tonos de ""Temporada"" -15 unid. (x 4g.c/u.) HD NUEVA COMBINACION",1108P,3.250
-MM,"Sombra Compacta - Paleta de tonos de ""Temporada"" -15 unid. (x 4g.c/u.) HD",1109P,3.250
+MM,1003P - Tonalizador Correctivo Paleta 15 unid.( x 4 g. c/u) ,1003P,2300
+MM,"Sombra Compacta - Paleta de tonos ""Fantasía"" -14 unid. (x 4g.c/u.) -FULL COLOR    ",1105P,3250
+MM,"Sombra Compacta - Paleta de tonos ""Nude"" -14 unid. (x 4g.c/u.) NUEVA COMBINACION ",1106P,3250
+MM,"Sombra Compacta - Paleta de tonos ""Nude Atemporal""-15 unid. (x 4g.c/u.) HD",1107P,3250
+MM,"Sombra Compacta - Paleta de tonos de ""Temporada"" -15 unid. (x 4g.c/u.) HD NUEVA COMBINACION",1108P,3250
+MM,"Sombra Compacta - Paleta de tonos de ""Temporada"" -15 unid. (x 4g.c/u.) HD",1109P,3250
 MM,"Labial Humectante Mini Paleta- 6 unid. x 2,5g.c/u. @Gama de Rosas",1502P-01,325
 MM,"Labial Humectante Mini Paleta- 6 unid. x 2,5g.c/u. @Gama de Anaranjados",1502P-02,325
 MM,"Labial Humectante Mini Paleta- 6 unid. x 2,5g.c/u. @Gama de Marrones",1502P-03,325
@@ -247,8 +247,8 @@ MM,Corrector Óptico HD @Beige Neutro -NUEVO,2813P,400
 MM,Petaca Vacía para 1 Repuesto x 37mm,2020,86
 MP,Sombra en Polvo Perla Pote x 1g. hsta agotar stock @Perla  Azul,1152P-03,215
 MP,Maquillaje Compacto Polvo Mate Efecto BLUR - Repuesto de 59mm x 10g hsta agotar stock. @Amarillo,2010R-01,395
-MP,5014 - Fluidificador de Texturas Botella x 10g. (Pack 3 Unidades) (Art. Individual 2014P),5014,1.650
-MP,"Pre Base para Labios Cristal HD Envase x 3,5g. (Pack  3 Unidades)  (Art. Individual 2510P)",5510,1.270
+MP,5014 - Fluidificador de Texturas Botella x 10g. (Pack 3 Unidades) (Art. Individual 2014P),5014,1650
+MP,"Pre Base para Labios Cristal HD Envase x 3,5g. (Pack  3 Unidades)  (Art. Individual 2510P)",5510,1270
 MP,Pigmentador Humectante (Pack  4 Unidades) Pote x 4g. (Art. Individual 1550P) hsta agotar stock. @BLANCO,2550P-00,880
 MP,Maquillaje Humectante Satinado Botella con dosificador x 55g. hsta agotar stock. @Nacarado,2850P-01,550
 MP,Maquillaje Humectante Satinado Botella con dosificador x 55g. hsta agotar stock. @Tostado,2850P-02,550
@@ -259,8 +259,8 @@ MP,Pre Base Fijadora para Cejas a prueba de agua Pote x 5gr. hsta agotar stock. 
 MP,Cartuchera vacía imantada con zocalo para todas las medidas de repuestos (Mediana),2019Z,355
 MP,Bolsas Ecológicas  30x38 cm. de Friselina con Manijas y Logo PACK 10 UNIDADES (Art. Individual 410),401,60
 MP,Bolsas Ecológicas de 15x20 cm. de Friselina  y Logo PACK 10 UNIDADES (Art. Individual 411),402,30
-MP,Kit con: Set de Bases Alta cobertura Ultra HD + Unificador de Texturas HD + Porta Cosmeticos Cristal,5001,2.700
-MP,Kit Perfector con efectos Mate y Luminico - Tendencia Dewy Glow 1 Base en gotas ULTRA MATE + 3 Perlas en Polvo + Paleta Mezcladora + Porta Cosmeticos Cristal,5004,1.950
+MP,Kit con: Set de Bases Alta cobertura Ultra HD + Unificador de Texturas HD + Porta Cosmeticos Cristal,5001,2700
+MP,Kit Perfector con efectos Mate y Luminico - Tendencia Dewy Glow 1 Base en gotas ULTRA MATE + 3 Perlas en Polvo + Paleta Mezcladora + Porta Cosmeticos Cristal,5004,1950
 MP,Diluyente Siliconado -Apto HD Multifunción a Prueba de Agua (Gotero) x 16cc.,2013P,385
 MP,Unificador de textura ULTRA HD (Botella con Gotero) x 11cc. Nuevo envase,2112P,608
 MP,Fijador Multifunción  -Apto HD  (Botella pulverizadora) x 55cc.,2113P,605
@@ -293,15 +293,15 @@ MP,Maquillaje Compacto Polvo Mate HD Siliconado Repuesto de 59mm x 10g. @Claro,2
 MP,Maquillaje Compacto Polvo Mate HD Siliconado Repuesto de 59mm x 10g. @Oscuro.,2011P-M02,480
 MP,Maquillaje Compacto Polvo Satinado HD Siliconado Repuesto de 59mm x 10g. @Claro,2011P-S01,480
 MP,Maquillaje Compacto Polvo Satinado HD Siliconado Repuesto de 59mm x 10g. @Oscuro,2011P-S02,480
-MP,"Pre Base para párpados  Apto HD (Pack 3 Unidades) Petaca x 3,5g. (Art. Individual 2110P)  @Natural",2111P-00,1.200
+MP,"Pre Base para párpados  Apto HD (Pack 3 Unidades) Petaca x 3,5g. (Art. Individual 2110P)  @Natural",2111P-00,1200
 MP,Mascara para Pestañas Pro Base Extensora Botella con aplicadorx 12g..,2600P-00,305
-MP,Maquillaje Hidratante Siliconado - HD. Botella con dosificadorx 30g. @Marfil Extra Claro.,2801P-00,1.100
-MP,Maquillaje Hidratante Siliconado - HD. Botella con dosificadorx 30g. @Marfil,2801P-01,1.100
-MP,Maquillaje Hidratante Siliconado - HD. Botella con dosificadorx 30g. @Caramelo,2801P-02,1.100
-MP,Maquillaje Hidratante Siliconado - HD. Botella con dosificadorx 30g. @Dulce de leche  NUEVO!!,2801P-04,1.100
+MP,Maquillaje Hidratante Siliconado - HD. Botella con dosificadorx 30g. @Marfil Extra Claro.,2801P-00,1100
+MP,Maquillaje Hidratante Siliconado - HD. Botella con dosificadorx 30g. @Marfil,2801P-01,1100
+MP,Maquillaje Hidratante Siliconado - HD. Botella con dosificadorx 30g. @Caramelo,2801P-02,1100
+MP,Maquillaje Hidratante Siliconado - HD. Botella con dosificadorx 30g. @Dulce de leche  NUEVO!!,2801P-04,1100
 MP,Maquillaje Hidratante Siliconado Corrector Siliconado HD Botella con aplicador x 10g.@Beige Claro.,2812P-00,455
-MP,"Corrector Óptico HD (Pack 3 Unidades) Envase x 2,5g  (Art. Individual 2813P) @Beige Neutro-NUEVO",1813P,1.200
-MP,Delineador en Gel Apto HD (Pack  4 Unidades)  Pote x 4g. (Art. Individual 1911P) @Negro,2901P-01,1.360
+MP,"Corrector Óptico HD (Pack 3 Unidades) Envase x 2,5g  (Art. Individual 2813P) @Beige Neutro-NUEVO",1813P,1200
+MP,Delineador en Gel Apto HD (Pack  4 Unidades)  Pote x 4g. (Art. Individual 1911P) @Negro,2901P-01,1360
 MP,Delineador Líquido  Tinta (Pack  3 Unidades) - Botella x 6g.  (Art. Individual 2920P)  @Blanco,2921P-00,516
 MP,Delineador Líquido  Tinta (Pack  3 Unidades) - Botella x 6g.  (Art. Individual 2920P)  @Negro,2921P-01,516
 MP,Petaca Blanca Vacía para 1 Repuesto x 33mm. (Pack x 6 Unidades) - Art. Individual 2021P,2021,516
