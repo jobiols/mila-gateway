@@ -5,7 +5,7 @@ from secret import odoo_key
 import csv
 
 MILA_CATEGS = [3, 25, 45, 26, 49, 53]
-MILA_PRECIOS = '2019-04-mila-precios-master.csv'
+MILA_PRECIOS = '2019-09-mila-precios-master.csv'
 
 
 class Product(object):
@@ -151,7 +151,7 @@ class Odoo:
             if not self._odoo_prods.find(prod):
                 count += 1
                 print prod.formatted()
-        print 'total productos ', count
+        print 'total productos nuevos ', count
         print 'mila prod', mila
 
     def list_obsolete_products(self):
@@ -229,8 +229,8 @@ class Odoo:
 
 
 odoo = Odoo(odoo_key)
-#odoo.list_new_products()
+odoo.list_new_products()
 # odoo.list_obsolete_products()
 # odoo.list_odoo_products()
 # odoo.list_mila_products()
-odoo.process_all()
+# odoo.process_all()
