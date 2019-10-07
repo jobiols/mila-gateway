@@ -5,7 +5,7 @@ from secret import odoo_key
 import csv
 
 MILA_CATEGS = [3, 25, 45, 26, 49, 53]
-MILA_PRECIOS = '2019-09-mila-precios-master.csv'
+MILA_PRECIOS = '2019-10-mila-precios-master.csv'
 
 
 class Product(object):
